@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NVIDA™ RTX Chair Alarm — DLSS 4 Seat Protection</title>
+  <title>NVIDA™ Chair Alarm — Anti-Cheating Lumbar Hardware</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -11,12 +11,12 @@
     :root {
       --bg: #fafafa;
       --surface: #ffffff;
-      --text: #0a0a0a;
-      --muted: #6b7280;
-      --border: #e5e7eb;
-      --nv-green: #76b900;
-      --nv-green-dark: #5a8f00;
-      --danger: #ef4444;
+      --text: #09090b;
+      --muted: #71717a;
+      --border: #e4e4e7;
+      --nv: #76b900;
+      --nv-dark: #5a8f00;
+      --red: #ef4444;
     }
 
     * {
@@ -37,163 +37,154 @@
       font-family: 'JetBrains Mono', monospace;
     }
 
-    /* Minimalist Header */
+    /* Minimalist Top Bar */
     header {
       position: sticky;
       top: 0;
       z-index: 40;
-      background: rgba(250, 250, 250, 0.88);
+      background: rgba(250, 250, 250, 0.9);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
     }
 
-    .nav-wrap {
-      max-width: 980px;
+    .nav {
+      max-width: 960px;
       margin: 0 auto;
-      padding: 1rem 1.5rem;
+      padding: 0.9rem 1.5rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 1rem;
+      gap: 0.75rem;
+      flex-wrap: wrap;
     }
 
     .brand {
-      display: flex;
+      display: inline-flex;
       align-items: center;
-      gap: 0.55rem;
+      gap: 0.5rem;
       font-weight: 800;
-      font-size: 1.05rem;
+      font-size: 1rem;
       letter-spacing: -0.02em;
       text-decoration: none;
       color: var(--text);
     }
 
-    .brand-dot {
-      width: 12px;
-      height: 12px;
+    .brand-mark {
+      width: 11px;
+      height: 11px;
       border-radius: 3px;
-      background: var(--nv-green);
+      background: var(--nv);
     }
 
-    .nav-controls {
+    .audio-bar {
       display: flex;
       align-items: center;
-      gap: 0.65rem;
+      gap: 0.45rem;
+      flex-wrap: wrap;
     }
 
-    /* Minimal Buttons */
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 0.45rem;
-      padding: 0.65rem 1.2rem;
+      gap: 0.4rem;
+      padding: 0.55rem 1.05rem;
       border-radius: 999px;
-      font-size: 0.86rem;
+      font-size: 0.82rem;
       font-weight: 600;
       cursor: pointer;
       border: 1px solid var(--border);
       background: var(--surface);
       color: var(--text);
-      transition: all 0.16s ease;
+      transition: all 0.15s ease;
     }
 
     .btn:hover {
-      border-color: #111;
+      border-color: #18181b;
     }
 
-    .btn-green {
-      background: var(--nv-green);
+    .btn.active-track {
+      background: #09090b;
       color: #fff;
-      border-color: var(--nv-green);
+      border-color: #09090b;
     }
 
-    .btn-green:hover {
-      background: var(--nv-green-dark);
-      border-color: var(--nv-green-dark);
-    }
-
-    .btn-black {
-      background: #0a0a0a;
+    .btn-nv {
+      background: var(--nv);
       color: #fff;
-      border-color: #0a0a0a;
+      border-color: var(--nv);
     }
 
-    .btn-black:hover {
-      background: #262626;
+    .btn-nv:hover {
+      background: var(--nv-dark);
+      border-color: var(--nv-dark);
     }
 
-    .btn-music-on {
-      background: #fef2f2;
-      border-color: #fca5a5;
-      color: #b91c1c;
-    }
-
-    /* Main Container */
+    /* Container */
     .container {
-      max-width: 980px;
+      max-width: 960px;
       margin: 0 auto;
       padding: 0 1.5rem;
     }
 
     /* Hero */
     .hero {
-      padding: 5.5rem 0 4.5rem;
+      padding: 4.75rem 0 4rem;
       text-align: center;
     }
 
-    .kicker {
+    .pill {
       display: inline-block;
-      font-size: 0.72rem;
+      font-size: 0.7rem;
       font-weight: 600;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: var(--nv-green-dark);
+      color: var(--nv-dark);
       background: rgba(118, 185, 0, 0.12);
       padding: 0.3rem 0.75rem;
       border-radius: 999px;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.25rem;
     }
 
     .hero h1 {
-      font-size: clamp(2.4rem, 5.5vw, 4.1rem);
+      font-size: clamp(2.4rem, 5.4vw, 4rem);
       font-weight: 800;
       letter-spacing: -0.04em;
-      line-height: 1.05;
-      max-width: 780px;
-      margin: 0 auto 1.25rem;
+      line-height: 1.04;
+      max-width: 760px;
+      margin: 0 auto 1.15rem;
     }
 
-    .hero p.subtitle {
-      font-size: 1.1rem;
+    .hero p.lead {
+      font-size: 1.08rem;
       color: var(--muted);
       max-width: 560px;
-      margin: 0 auto 2.5rem;
+      margin: 0 auto 2.25rem;
     }
 
-    /* Minimalist Chair Stage */
-    .chair-stage {
+    /* Minimal Chair Simulator Box */
+    .simulator {
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 24px;
-      padding: 2.75rem 1.5rem;
-      max-width: 620px;
+      padding: 2.25rem 1.5rem;
+      max-width: 600px;
       margin: 0 auto;
-      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.04);
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.035);
     }
 
-    .stage-top {
+    .sim-hud {
       display: flex;
       justify-content: space-between;
       font-size: 0.72rem;
       color: var(--muted);
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.25rem;
     }
 
-    .chair-visual {
-      margin: 0.5rem auto 1.75rem;
-      width: 150px;
-      height: 150px;
+    .chair-stage {
+      width: 145px;
+      height: 145px;
+      margin: 0.25rem auto 1.5rem;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -201,36 +192,37 @@
       transition: transform 0.15s ease;
     }
 
-    .chair-visual:hover {
+    .chair-stage:hover {
       transform: scale(1.04);
     }
 
-    @keyframes chairWobble {
+    @keyframes violentSqueak {
       0%, 100% { transform: rotate(0deg) scale(1); }
-      20% { transform: rotate(-9deg) scale(0.95); }
-      40% { transform: rotate(8deg) scale(1.03); }
-      60% { transform: rotate(-6deg); }
-      80% { transform: rotate(4deg); }
+      15% { transform: rotate(-11deg) scale(0.93); }
+      30% { transform: rotate(10deg) scale(1.04); }
+      45% { transform: rotate(-8deg); }
+      60% { transform: rotate(7deg); }
+      75% { transform: rotate(-4deg); }
     }
 
-    .wobble {
-      animation: chairWobble 0.55s ease;
+    .squeaking {
+      animation: violentSqueak 0.6s ease;
     }
 
-    .alert-log {
-      margin-top: 1.35rem;
-      padding: 0.85rem 1rem;
+    .status-box {
+      margin-top: 1.25rem;
+      padding: 0.9rem 1rem;
       border-radius: 12px;
       background: #f4f4f5;
-      font-size: 0.84rem;
-      color: #18181b;
-      min-height: 48px;
+      font-size: 0.85rem;
+      color: #27272a;
+      min-height: 52px;
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
-    .alert-log.triggered {
+    .status-box.busted {
       background: #fef2f2;
       color: #991b1b;
       border: 1px solid #fecaca;
@@ -238,127 +230,95 @@
     }
 
     /* Sections */
-    section.block {
-      padding: 4.5rem 0;
+    section.section {
+      padding: 4.25rem 0;
       border-top: 1px solid var(--border);
     }
 
-    .block-head {
-      margin-bottom: 2.5rem;
-    }
-
-    .block-head h2 {
-      font-size: 1.9rem;
+    .sec-title {
+      font-size: 1.75rem;
       font-weight: 800;
       letter-spacing: -0.03em;
       margin-bottom: 0.4rem;
     }
 
-    .block-head p {
+    .sec-sub {
       color: var(--muted);
-      font-size: 0.98rem;
+      font-size: 0.96rem;
+      margin-bottom: 2.25rem;
     }
 
-    /* Jensen Benchmark Parody */
-    .chart-box {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 2rem;
+    /* Cheating & Jensen Meme Cards */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 1.25rem;
     }
 
-    .bar-group {
-      margin-bottom: 1.5rem;
-    }
-
-    .bar-group:last-child {
-      margin-bottom: 0;
-    }
-
-    .bar-label {
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.85rem;
-      font-weight: 600;
-      margin-bottom: 0.45rem;
-    }
-
-    .bar-track {
-      height: 28px;
-      background: #f3f4f6;
-      border-radius: 8px;
-      overflow: hidden;
-      display: flex;
-    }
-
-    .bar-real {
-      background: #9ca3af;
-      height: 100%;
-    }
-
-    .bar-fake {
-      background: repeating-linear-gradient(
-        45deg,
-        var(--nv-green),
-        var(--nv-green) 10px,
-        #84cc16 10px,
-        #84cc16 20px
-      );
-      height: 100%;
-    }
-
-    .jensen-quote {
-      margin-top: 1.75rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      font-size: 0.92rem;
-      color: var(--muted);
-    }
-
-    /* 3-Column AI Slop Grid */
     .grid-3 {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 1.25rem;
     }
 
-    .mini-card {
+    .card {
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 18px;
       padding: 1.65rem;
     }
 
-    .mini-card .tag {
+    .card-kicker {
       font-size: 0.7rem;
       font-weight: 600;
-      color: var(--nv-green-dark);
       text-transform: uppercase;
       letter-spacing: 0.06em;
-      display: block;
+      color: var(--nv-dark);
       margin-bottom: 0.5rem;
+      display: block;
     }
 
-    .mini-card h3 {
-      font-size: 1.1rem;
+    .card h3 {
+      font-size: 1.08rem;
       font-weight: 700;
       margin-bottom: 0.45rem;
     }
 
-    .mini-card p {
+    .card p {
       font-size: 0.9rem;
       color: var(--muted);
     }
 
-    /* Minimal Purchase Box */
-    .buy-strip {
+    /* Distracted Boyfriend Minimalist Diagram */
+    .meme-diagram {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 1.75rem;
+      margin-top: 1.25rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      text-align: center;
+    }
+
+    .meme-node {
+      padding: 1rem;
+      border-radius: 14px;
+      background: #f4f4f5;
+    }
+
+    .meme-node.highlight {
+      background: rgba(118, 185, 0, 0.12);
+      border: 1px solid rgba(118, 185, 0, 0.35);
+    }
+
+    /* Buy Strip */
+    .buy-bar {
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 22px;
-      padding: 2.5rem 2rem;
+      padding: 2.25rem 2rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -366,13 +326,7 @@
       gap: 1.5rem;
     }
 
-    .price-display {
-      font-size: 2.2rem;
-      font-weight: 800;
-      letter-spacing: -0.03em;
-    }
-
-    /* Clean Modal */
+    /* Modal */
     .modal-bg {
       position: fixed;
       inset: 0;
@@ -393,12 +347,12 @@
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 20px;
-      max-width: 420px;
+      max-width: 410px;
       width: 100%;
       padding: 1.75rem;
     }
 
-    .field {
+    .input {
       width: 100%;
       padding: 0.7rem 0.9rem;
       border: 1px solid var(--border);
@@ -410,28 +364,40 @@
 
     footer {
       border-top: 1px solid var(--border);
-      padding: 2.5rem 0;
+      padding: 2.25rem 0;
+      text-align: center;
       font-size: 0.8rem;
       color: var(--muted);
-      text-align: center;
+    }
+
+    @media (max-width: 680px) {
+      .meme-diagram {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Minimal Header -->
+  <!-- Minimalist Sticky Header with TikTok Meme Soundboard -->
   <header>
-    <div class="nav-wrap">
+    <div class="nav">
       <a href="#" class="brand">
-        <span class="brand-dot"></span>
+        <span class="brand-mark"></span>
         <span>NVIDA™ <span style="font-weight:400; color:var(--muted);">Chair Alarm</span></span>
       </a>
 
-      <div class="nav-controls">
-        <button type="button" class="btn" id="musicToggle" onclick="toggleCringeMusic()">
-          🎵 Cringe Music: OFF
+      <div class="audio-bar" role="group" aria-label="TikTok Funny Audio Selector">
+        <button type="button" class="btn" id="btn-sneaky" onclick="toggleTikTokTrack('sneaky')">
+          🎵 TikTok Sneaky
         </button>
-        <button type="button" class="btn btn-green" onclick="openCheckout()">
+        <button type="button" class="btn" id="btn-ohno" onclick="toggleTikTokTrack('ohno')">
+          😱 "Oh No" Busted
+        </button>
+        <button type="button" class="btn" id="btn-curb" onclick="toggleTikTokTrack('curb')">
+          🎺 Curb Credits
+        </button>
+        <button type="button" class="btn btn-nv" onclick="openBuy()">
           Buy — $549*
         </button>
       </div>
@@ -441,128 +407,133 @@
   <main class="container">
     <!-- Hero -->
     <section class="hero">
-      <div class="kicker mono">Pulled Straight From Jensen's Oven</div>
-      <h1>Your chair. Not theirs.</h1>
-      <p class="subtitle">
-        Powered by <strong>DLSS 4 (Dramatic Loud Seat Squeak™)</strong>. Whenever a coworker sits in your chair, 10,000 Tensor Cores generate an agonizing 128dB wet-leather screech.
+      <div class="pill mono">Longest Commitment Is Still The Leather Jacket</div>
+      <h1>Your chair.<br>Stop letting it cheat.</h1>
+      <p class="lead">
+        Powered by <strong>DLSS 4 (Dramatic Loud Seat Squeak™)</strong>. The second a coworker sits in your chair, 10,000 Tensor Cores trigger a 128dB wet-leather screech and draft an apology letter to HR.
       </p>
 
-      <!-- Interactive Seat Simulator -->
-      <div class="chair-stage">
-        <div class="stage-top mono">
-          <span>TDP: 850W (IDLE)</span>
-          <span id="squeakCounter">FAKE SQUEAKS GENERATED: 0</span>
+      <!-- Interactive Chair Simulator -->
+      <div class="simulator">
+        <div class="sim-hud mono">
+          <span>LOYALTY KERNEL: ACTIVE</span>
+          <span id="cheaterCount">UNFAITHFUL SITS CAUGHT: 0</span>
         </div>
 
-        <div class="chair-visual" id="chairSvg" onclick="triggerChairSqueak()" title="Click to sit in forbidden chair">
-          <!-- Minimalist Office Chair Line Illustration -->
-          <svg width="136" height="136" viewBox="0 0 140 140" fill="none">
-            <!-- Backrest -->
-            <rect x="40" y="18" width="60" height="54" rx="14" stroke="#0a0a0a" stroke-width="4" fill="#fafafa"/>
-            <!-- NVIDA Green Lumbar Strip -->
+        <div class="chair-stage" id="chairIcon" onclick="triggerSqueak()" title="Click to sit in forbidden chair">
+          <svg width="132" height="132" viewBox="0 0 140 140" fill="none">
+            <rect x="40" y="18" width="60" height="54" rx="14" stroke="#09090b" stroke-width="4" fill="#fafafa"/>
             <rect x="52" y="34" width="36" height="6" rx="3" fill="#76b900"/>
-            <!-- Armrests -->
-            <path d="M28 54 V78 H42" stroke="#0a0a0a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M112 54 V78 H98" stroke="#0a0a0a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-            <!-- Seat Cushion -->
-            <rect x="34" y="76" width="72" height="14" rx="7" stroke="#0a0a0a" stroke-width="4" fill="#0a0a0a"/>
-            <!-- Hydraulic Stem -->
-            <line x1="70" y1="90" x2="70" y2="114" stroke="#0a0a0a" stroke-width="4"/>
-            <!-- Wheel Base -->
-            <path d="M38 120 L70 112 L102 120" stroke="#0a0a0a" stroke-width="4" stroke-linecap="round"/>
+            <path d="M28 54 V78 H42" stroke="#09090b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M112 54 V78 H98" stroke="#09090b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="34" y="76" width="72" height="14" rx="7" stroke="#09090b" stroke-width="4" fill="#09090b"/>
+            <line x1="70" y1="90" x2="70" y2="114" stroke="#09090b" stroke-width="4"/>
+            <path d="M38 120 L70 112 L102 120" stroke="#09090b" stroke-width="4" stroke-linecap="round"/>
             <circle cx="38" cy="123" r="4" fill="#76b900"/>
             <circle cx="70" cy="123" r="4" fill="#76b900"/>
             <circle cx="102" cy="123" r="4" fill="#76b900"/>
           </svg>
         </div>
 
-        <button type="button" class="btn btn-black" style="padding: 0.85rem 1.75rem;" onclick="triggerChairSqueak()">
-          🍑 Sit In Someone's Chair (Test Squeak)
+        <button type="button" class="btn active-track" style="padding: 0.85rem 1.7rem; font-size: 0.9rem;" onclick="triggerSqueak()">
+          🍑 Sit In Someone Else's Chair (Test Alarm)
         </button>
 
-        <div class="alert-log" id="squeakLog">
-          Chair unoccupied. Lumbar support currently un-cheated on.
+        <div class="status-box" id="statusBox">
+          Chair is currently faithful. Zero unauthorized cheeks detected.
         </div>
       </div>
     </section>
 
-    <!-- Jensen Cheating Benchmark Section -->
-    <section class="block">
-      <div class="block-head">
-        <h2>4090 Squeak Performance at $549*</h2>
-        <p>Using Multi-Squeak Frame Generation, 3 out of every 4 squeaks are mathematically hallucinated by AI.</p>
+    <!-- Cheating & Jensen Memes Section -->
+    <section class="section">
+      <h2 class="sec-title">Built AI chips. Got roasted by AI memes.</h2>
+      <p class="sec-sub">Engineered for people who have trust issues with both GPU benchmarks and coworkers.</p>
+
+      <div class="grid-2">
+        <div class="card">
+          <span class="card-kicker mono">JENSEN EDITION FIRMWARE</span>
+          <h3>Longest Commitment: The Leather Jacket</h3>
+          <p>Your chair might let Greg from Accounting sit on it while you're at lunch, but our triple-stitched faux-leather backrest stays loyal through every Q4 keynote.</p>
+        </div>
+
+        <div class="card">
+          <span class="card-kicker mono">AUTO-APOLOGY GENERATOR</span>
+          <h3>All-Staff Confession Email</h3>
+          <p>Caught red-handed in another developer's ergonomic mesh? The chair instantly emails the entire company: <em>"I was unfaithful to my desk. There is no excuse."</em></p>
+        </div>
+
+        <div class="card">
+          <span class="card-kicker mono">FAKE FRAME BENCHMARKS</span>
+          <h3>1 Real Squeak + 3 Hallucinated Squeaks</h3>
+          <p>Why settle for one quiet creak when DLSS 4 can mathematically fabricate three extra mortifying noises out of thin air?</p>
+        </div>
+
+        <div class="card">
+          <span class="card-kicker mono">GPU IRONY ENGINE</span>
+          <h3>Roasted By Our Own Silicon</h3>
+          <p>Every meme mocking your seat-stealing coworker is rendered at 4K 240Hz on the very same Blackwell GPUs they used to make it.</p>
+        </div>
       </div>
 
-      <div class="chart-box">
-        <div class="bar-group">
-          <div class="bar-label">
-            <span>Regular IKEA Chair (No AI)</span>
-            <span class="mono">1 Real Squeak</span>
-          </div>
-          <div class="bar-track">
-            <div class="bar-real" style="width: 22%;"></div>
-          </div>
+      <!-- Distracted Boyfriend Meme Breakdown -->
+      <div class="meme-diagram">
+        <div class="meme-node">
+          <div style="font-size:1.5rem; margin-bottom:0.25rem;">😠</div>
+          <strong style="font-size:0.88rem;">Your Regular Desk Chair</strong>
+          <p style="font-size:0.78rem; color:var(--muted);">Watching you betray its lumbar support</p>
         </div>
-
-        <div class="bar-group">
-          <div class="bar-label">
-            <span>NVIDA RTX Chair Alarm (DLSS 4 ON)</span>
-            <span class="mono" style="color: var(--nv-green-dark);">1 Real + 3 Fake Squeaks (400% Loyalty)</span>
-          </div>
-          <div class="bar-track">
-            <div class="bar-real" style="width: 22%;"></div>
-            <div class="bar-fake" style="width: 78%;"></div>
-          </div>
+        <div class="meme-node highlight">
+          <div style="font-size:1.5rem; margin-bottom:0.25rem;">🧥👀</div>
+          <strong style="font-size:0.88rem;">You (In a Leather Jacket)</strong>
+          <p style="font-size:0.78rem; color:var(--muted);">"The more chairs you sit in, the more you save"</p>
         </div>
-
-        <div class="jensen-quote">
-          <div style="font-size: 2rem;">🧥</div>
-          <div>
-            <strong>"The more chairs you buy, the more lumbar you save."</strong><br>
-            <span>— Jensen, wearing 3 leather jackets inside a 95°F data center. <em>*Actual price $1,999 without Fake Frame rebate.</em></span>
-          </div>
+        <div class="meme-node">
+          <div style="font-size:1.5rem; margin-bottom:0.25rem;">🪑✨</div>
+          <strong style="font-size:0.88rem;">Coworker's Unattended Chair</strong>
+          <p style="font-size:0.78rem; color:var(--muted);">About to scream at 128 decibels</p>
         </div>
       </div>
     </section>
 
-    <!-- Certified AI Slop Section -->
-    <section class="block">
-      <div class="block-head">
-        <h2>100% Certified AI Slop Architecture</h2>
-        <p>Trained on 14 billion scraped Pinterest living rooms and cursed stock photos.</p>
-      </div>
+    <!-- AI Slop Features -->
+    <section class="section">
+      <h2 class="sec-title">100% Certified AI Slop Hardware</h2>
+      <p class="sec-sub">Trained on 40 billion scraped Facebook posts and cursed stock renders.</p>
 
       <div class="grid-3">
-        <div class="mini-card">
-          <span class="tag mono">HALLUCINATION ENGINE</span>
+        <div class="card">
+          <span class="card-kicker mono">ANATOMY HALLUCINATION</span>
           <h3>6-Fingered Armrests</h3>
-          <p>Ergonomically sculpted for humans with six fingers on each hand and slightly melted elbows.</p>
+          <p>Sculpted specifically for executives with six fingers per hand and slightly melted elbows.</p>
         </div>
 
-        <div class="mini-card">
-          <span class="tag mono">COMPUTER VISION</span>
-          <h3>Shrimp Jesus Detection</h3>
-          <p>Onboard camera distinguishes between your actual butt, a seat-stealing coworker, and Shrimp Jesus.</p>
+        <div class="card">
+          <span class="card-kicker mono">VISION TRANSFORMER</span>
+          <h3>Shrimp Jesus Verification</h3>
+          <p>Onboard camera blocks seat thieves while granting automatic admin privileges to Shrimp Jesus.</p>
         </div>
 
-        <div class="mini-card">
-          <span class="tag mono">ANTI-CHEAT KERNEL</span>
-          <h3>Seat-Cheating Telemetry</h3>
-          <p>Instantly Slacks the entire company when Greg from Accounting cheats on his stool with your chair.</p>
+        <div class="card">
+          <span class="card-kicker mono">THERMAL THROTTLING</span>
+          <h3>850W Heated Cushion</h3>
+          <p>Uses a genuine 12VHPWR connector to keep your seat at a comfortable 95°C oven temperature.</p>
         </div>
       </div>
     </section>
 
-    <!-- Minimalist Order Strip -->
-    <section class="block">
-      <div class="buy-strip">
+    <!-- Minimalist Purchase Section -->
+    <section class="section">
+      <div class="buy-bar">
         <div>
-          <div class="mono" style="font-size: 0.75rem; color: var(--nv-green-dark); font-weight: 600;">FOUNDERS EDITION • LIMITED SILICON</div>
-          <div class="price-display">$549.00 <span style="font-size: 0.9rem; font-weight: 500; color: var(--muted);">/ chair</span></div>
-          <div style="font-size: 0.85rem; color: var(--muted);">Includes 12-pin melting power adapter & 1 free leather jacket sticker.</div>
+          <span class="card-kicker mono">FOUNDERS EDITION • NO REFUNDS</span>
+          <div style="font-size: 2.1rem; font-weight: 800; letter-spacing: -0.03em;">
+            $549.00 <span style="font-size: 0.88rem; font-weight: 500; color: var(--muted);">($1,999 without Fake Squeaks)</span>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--muted);">Ships with 1× Anti-Cheating Seat Sensor & 1× Leather Jacket Care Kit.</p>
         </div>
-        <button type="button" class="btn btn-green" style="padding: 0.95rem 2rem; font-size: 0.95rem;" onclick="openCheckout()">
-          Pre-Order Founders Edition
+        <button type="button" class="btn btn-nv" style="padding: 0.95rem 2rem; font-size: 0.95rem;" onclick="openBuy()">
+          Order Founders Edition
         </button>
       </div>
     </section>
@@ -570,39 +541,39 @@
 
   <footer>
     <div class="container">
-      NVIDA™ Corporation • Multi-Squeak Frame Generation is a trademark of Jensen's Oven. No refunds if your 12VHPWR seat warmer melts.
+      NVIDA™ Corporation • DLSS 4 Multi-Squeak Frame Generation. Not liable if your chair snitches on you to HR.
     </div>
   </footer>
 
   <!-- Minimal Checkout Modal -->
-  <div class="modal-bg" id="checkoutModal" onclick="if(event.target===this) closeCheckout()">
+  <div class="modal-bg" id="buyModal" onclick="if(event.target===this) closeBuy()">
     <div class="modal-box">
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
-        <h3 style="font-size:1.15rem;">Founders Edition Checkout</h3>
-        <button type="button" class="btn" style="padding:0.25rem 0.65rem;" onclick="closeCheckout()">✕</button>
+        <h3 style="font-size:1.1rem;">Founders Edition Order</h3>
+        <button type="button" class="btn" style="padding:0.25rem 0.65rem;" onclick="closeBuy()">✕</button>
       </div>
       <p style="font-size:0.85rem; color:var(--muted); margin-bottom:1rem;">
-        1× NVIDA™ RTX Chair Alarm (DLSS 4) — <strong>$549.00</strong>
+        1× NVIDA™ RTX Chair Alarm — <strong>$549.00</strong>
       </p>
-      <form onsubmit="completeOrder(event)">
-        <input type="text" class="field" placeholder="Your Name" required />
-        <input type="email" class="field" placeholder="Work Email (for Slack snitching)" required />
-        <input type="text" class="field" placeholder="Promo Code (try FAKEFRAMES)" id="promoCode" />
-        <button type="submit" class="btn btn-green" style="width:100%; padding:0.8rem;">
-          Confirm Order
+      <form onsubmit="submitOrder(event)">
+        <input type="text" class="input" placeholder="Full Name" required />
+        <input type="email" class="input" placeholder="Work Email (for automatic HR confessions)" required />
+        <input type="text" class="input" placeholder="Promo Code (try JACKET)" id="promoInput" />
+        <button type="submit" class="btn btn-nv" style="width:100%; padding:0.8rem;">
+          Confirm Purchase
         </button>
       </form>
-      <p id="orderResult" style="font-size:0.84rem; color:var(--nv-green-dark); font-weight:600; margin-top:0.85rem;"></p>
+      <p id="orderStatus" style="font-size:0.84rem; color:var(--nv-dark); font-weight:600; margin-top:0.85rem;"></p>
     </div>
   </div>
 
   <script>
     let audioCtx = null;
-    let squeakCount = 0;
-    let musicInterval = null;
-    let isMusicPlaying = false;
+    let currentTrack = null;
+    let trackTimer = null;
+    let caughtCount = 0;
 
-    function getAudioContext() {
+    function initAudio() {
       if (!audioCtx) {
         const Ctx = window.AudioContext || window.webkitAudioContext;
         audioCtx = new Ctx();
@@ -613,15 +584,123 @@
       return audioCtx;
     }
 
-    // Dramatic Multi-Pitch Leather + Rusty Spring Chair Squeak Synthesizer
-    function triggerChairSqueak() {
-      const ctx = getAudioContext();
+    // Play a single clean note for the TikTok meme synthesizer
+    function playNote(freq, duration, type = 'triangle', vol = 0.11, slideTo = null) {
+      const ctx = initAudio();
       const now = ctx.currentTime;
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
 
-      // Randomize pitch slightly each sit so every squeak feels painfully authentic
-      const baseFreq = 680 + Math.random() * 260;
+      osc.type = type;
+      osc.frequency.setValueAtTime(freq, now);
+      if (slideTo) {
+        osc.frequency.exponentialRampToValueAtTime(slideTo, now + duration * 0.85);
+      }
 
-      // Primary resonant squeak oscillator
+      gain.gain.setValueAtTime(0.001, now);
+      gain.gain.linearRampToValueAtTime(vol, now + 0.02);
+      gain.gain.exponentialRampToValueAtTime(0.001, now + duration);
+
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      osc.start(now);
+      osc.stop(now + duration + 0.02);
+    }
+
+    // Viral TikTok Funny Music Loops
+    const tiktokTracks = {
+      // 1. Goofy TikTok Pizzicato Sneak (inspired by Kevin MacLeod's Sneaky Snitch)
+      sneaky: {
+        tempo: 230,
+        notes: [
+          { f: 329.63, d: 0.14, t: 'triangle' }, // E4
+          { f: 392.00, d: 0.14, t: 'triangle' }, // G4
+          { f: 493.88, d: 0.14, t: 'triangle' }, // B4
+          { f: 523.25, d: 0.18, t: 'triangle' }, // C5
+          { f: 493.88, d: 0.14, t: 'triangle' }, // B4
+          { f: 392.00, d: 0.14, t: 'triangle' }, // G4
+          { f: 329.63, d: 0.18, t: 'triangle' }, // E4
+          { f: 311.13, d: 0.18, t: 'triangle' }, // D#4
+          { f: 329.63, d: 0.14, t: 'triangle' }, // E4
+          { f: 392.00, d: 0.14, t: 'triangle' }, // G4
+          { f: 493.88, d: 0.14, t: 'triangle' }, // B4
+          { f: 587.33, d: 0.18, t: 'triangle' }, // D5
+          { f: 523.25, d: 0.16, t: 'triangle' }, // C5
+          { f: 493.88, d: 0.16, t: 'triangle' }, // B4
+          { f: 440.00, d: 0.16, t: 'triangle' }, // A4
+          { f: 392.00, d: 0.22, t: 'triangle' }  // G4
+        ]
+      },
+      // 2. TikTok "Oh No" Caught Red-Handed Hook
+      ohno: {
+        tempo: 310,
+        notes: [
+          { f: 659.25, d: 0.25, t: 'sine', s: 622.25 }, // Oh
+          { f: 587.33, d: 0.28, t: 'sine', s: 523.25 }, // No
+          { f: 659.25, d: 0.25, t: 'sine', s: 622.25 }, // Oh
+          { f: 587.33, d: 0.28, t: 'sine', s: 523.25 }, // No
+          { f: 659.25, d: 0.18, t: 'sawtooth' },         // Oh
+          { f: 587.33, d: 0.18, t: 'sawtooth' },         // no
+          { f: 523.25, d: 0.18, t: 'sawtooth' },         // no
+          { f: 493.88, d: 0.18, t: 'sawtooth' },         // no
+          { f: 440.00, d: 0.35, t: 'sawtooth', s: 392.00 } // nooo
+        ]
+      },
+      // 3. Busted Comedy Tuba Bounce (Curb Credits vibe)
+      curb: {
+        tempo: 270,
+        notes: [
+          { f: 130.81, d: 0.20, t: 'sawtooth' }, // C3
+          { f: 164.81, d: 0.20, t: 'sawtooth' }, // E3
+          { f: 196.00, d: 0.20, t: 'sawtooth' }, // G3
+          { f: 220.00, d: 0.22, t: 'sawtooth' }, // A3
+          { f: 196.00, d: 0.18, t: 'sawtooth' }, // G3
+          { f: 164.81, d: 0.18, t: 'sawtooth' }, // E3
+          { f: 130.81, d: 0.22, t: 'sawtooth' }, // C3
+          { f: 146.83, d: 0.18, t: 'sawtooth' }, // D3
+          { f: 164.81, d: 0.18, t: 'sawtooth' }, // E3
+          { f: 174.61, d: 0.18, t: 'sawtooth' }, // F3
+          { f: 196.00, d: 0.30, t: 'sawtooth', s: 185.00 } // G3
+        ]
+      }
+    };
+
+    function stopAllMusic() {
+      clearInterval(trackTimer);
+      trackTimer = null;
+      currentTrack = null;
+      document.querySelectorAll('.audio-bar .btn').forEach(b => b.classList.remove('active-track'));
+    }
+
+    function toggleTikTokTrack(trackKey) {
+      const wasSame = currentTrack === trackKey;
+      stopAllMusic();
+      if (wasSame) return;
+
+      initAudio();
+      currentTrack = trackKey;
+      document.getElementById(`btn-${trackKey}`).classList.add('active-track');
+
+      const track = tiktokTracks[trackKey];
+      let step = 0;
+
+      const tick = () => {
+        if (currentTrack !== trackKey) return;
+        const n = track.notes[step % track.notes.length];
+        playNote(n.f, n.d, n.t, 0.10, n.s || null);
+        step++;
+      };
+
+      tick();
+      trackTimer = setInterval(tick, track.tempo);
+    }
+
+    // Dramatic 128dB Leather Chair Squeak Synthesizer
+    function triggerSqueak() {
+      const ctx = initAudio();
+      const now = ctx.currentTime;
+      const base = 700 + Math.random() * 240;
+
       const osc1 = ctx.createOscillator();
       const osc2 = ctx.createOscillator();
       const filter = ctx.createBiquadFilter();
@@ -630,26 +709,24 @@
       osc1.type = 'sawtooth';
       osc2.type = 'triangle';
 
-      // Dramatic multi-stage rubber/leather friction pitch bend
-      osc1.frequency.setValueAtTime(baseFreq * 0.7, now);
-      osc1.frequency.exponentialRampToValueAtTime(baseFreq * 1.85, now + 0.18);
-      osc1.frequency.exponentialRampToValueAtTime(baseFreq * 1.15, now + 0.36);
-      osc1.frequency.exponentialRampToValueAtTime(baseFreq * 2.35, now + 0.62);
-      osc1.frequency.exponentialRampToValueAtTime(baseFreq * 0.6, now + 0.85);
+      osc1.frequency.setValueAtTime(base * 0.7, now);
+      osc1.frequency.exponentialRampToValueAtTime(base * 1.9, now + 0.18);
+      osc1.frequency.exponentialRampToValueAtTime(base * 1.1, now + 0.38);
+      osc1.frequency.exponentialRampToValueAtTime(base * 2.4, now + 0.65);
+      osc1.frequency.exponentialRampToValueAtTime(base * 0.55, now + 0.9);
 
-      osc2.frequency.setValueAtTime(baseFreq * 1.41, now);
-      osc2.frequency.exponentialRampToValueAtTime(baseFreq * 2.9, now + 0.22);
-      osc2.frequency.exponentialRampToValueAtTime(baseFreq * 1.8, now + 0.65);
+      osc2.frequency.setValueAtTime(base * 1.42, now);
+      osc2.frequency.exponentialRampToValueAtTime(base * 2.8, now + 0.25);
 
       filter.type = 'bandpass';
-      filter.frequency.setValueAtTime(1400, now);
+      filter.frequency.setValueAtTime(1450, now);
       filter.frequency.linearRampToValueAtTime(2600, now + 0.5);
       filter.Q.value = 9.5;
 
       gain.gain.setValueAtTime(0.001, now);
-      gain.gain.linearRampToValueAtTime(0.32, now + 0.05);
-      gain.gain.setValueAtTime(0.28, now + 0.55);
-      gain.gain.exponentialRampToValueAtTime(0.001, now + 0.88);
+      gain.gain.linearRampToValueAtTime(0.34, now + 0.05);
+      gain.gain.setValueAtTime(0.30, now + 0.6);
+      gain.gain.exponentialRampToValueAtTime(0.001, now + 0.92);
 
       osc1.connect(filter);
       osc2.connect(filter);
@@ -658,105 +735,50 @@
 
       osc1.start(now);
       osc2.start(now);
-      osc1.stop(now + 0.9);
-      osc2.stop(now + 0.9);
+      osc1.stop(now + 0.95);
+      osc2.stop(now + 0.95);
 
-      // Visual Chair Wobble & Fake Frame Counter
-      const chair = document.getElementById('chairSvg');
-      chair.classList.remove('wobble');
-      void chair.offsetWidth;
-      chair.classList.add('wobble');
+      // Animate Chair
+      const icon = document.getElementById('chairIcon');
+      icon.classList.remove('squeaking');
+      void icon.offsetWidth;
+      icon.classList.add('squeaking');
 
-      squeakCount += 4; // 1 real squeak + 3 AI fake squeaks
-      document.getElementById('squeakCounter').textContent = `FAKE SQUEAKS GENERATED: ${squeakCount}`;
+      caughtCount++;
+      document.getElementById('cheaterCount').textContent = `UNFAITHFUL SITS CAUGHT: ${caughtCount}`;
 
-      const messages = [
-        "🚨 CHEATING DETECTED: Greg from Finance sat in your chair. Generating 3x Fake Squeaks™.",
-        "🚨 ALERT: Unauthorized cheeks detected. 128dB leather-screech deployed across Slack.",
-        "🚨 DLSS 4 TRIGGERED: Turned 1 tiny sit into a 4-second agonizing symphony.",
-        "🚨 WARNING: Someone tried to steal your lumbar support. Jensen has been notified."
+      const roasts = [
+        "🚨 BUSTED: Caught cheating on your own chair! Auto-emailing an apology letter to all staff...",
+        "🚨 LOYALTY BREACH: Greg sat here. Even Jensen's leather jacket is disappointed in you.",
+        "🚨 DLSS 4 TRIGGERED: Turned 1 sneaky sit into 4 fake squeaks heard across three floors.",
+        "🚨 DISTRACTED BOYFRIEND ALERT: Stop looking at Herman Miller chairs while sitting on this one."
       ];
-      const log = document.getElementById('squeakLog');
-      log.classList.add('triggered');
-      log.textContent = messages[Math.floor(Math.random() * messages.length)];
-    }
 
-    // Cringe Out-of-Tune Recorder Flute / Corporate Hold Music Loop
-    function toggleCringeMusic() {
-      const btn = document.getElementById('musicToggle');
-      if (isMusicPlaying) {
-        clearInterval(musicInterval);
-        isMusicPlaying = false;
-        btn.textContent = '🎵 Cringe Music: OFF';
-        btn.classList.remove('btn-music-on');
-        return;
+      const box = document.getElementById('statusBox');
+      box.classList.add('busted');
+      box.textContent = roasts[Math.floor(Math.random() * roasts.length)];
+
+      // Automatically drop the TikTok "Oh No" busted beat if no music is playing
+      if (!currentTrack) {
+        toggleTikTokTrack('ohno');
       }
-
-      const ctx = getAudioContext();
-      isMusicPlaying = true;
-      btn.textContent = '🎶 Cringe Music: ON';
-      btn.classList.add('btn-music-on');
-
-      // Intentionally off-key "My Heart Will Go On" shitty-recorder notes
-      const cringeNotes = [
-        261.63, 293.66, 331.5, 293.66, 261.63, 293.66, 395.0, 349.23,
-        329.63, 261.63, 221.5, 196.0, 261.63, 293.66, 334.0, 392.0
-      ];
-      let step = 0;
-
-      const playStep = () => {
-        if (!isMusicPlaying) return;
-        const now = ctx.currentTime;
-        const osc = ctx.createOscillator();
-        const wobble = ctx.createOscillator();
-        const wobbleGain = ctx.createGain();
-        const noteGain = ctx.createGain();
-
-        // Breathless recorder sine + awkward pitch vibrato
-        osc.type = 'sine';
-        const freq = cringeNotes[step % cringeNotes.length];
-        osc.frequency.setValueAtTime(freq, now);
-        osc.frequency.linearRampToValueAtTime(freq * 1.025, now + 0.25);
-
-        wobble.frequency.value = 6.5;
-        wobbleGain.gain.value = 7;
-        wobble.connect(wobbleGain);
-        wobbleGain.connect(osc.frequency);
-
-        noteGain.gain.setValueAtTime(0.001, now);
-        noteGain.gain.linearRampToValueAtTime(0.09, now + 0.04);
-        noteGain.gain.exponentialRampToValueAtTime(0.001, now + 0.36);
-
-        osc.connect(noteGain);
-        noteGain.connect(ctx.destination);
-
-        osc.start(now);
-        wobble.start(now);
-        osc.stop(now + 0.38);
-        wobble.stop(now + 0.38);
-        step++;
-      };
-
-      playStep();
-      musicInterval = setInterval(playStep, 400);
     }
 
-    function openCheckout() {
-      document.getElementById('checkoutModal').classList.add('open');
+    function openBuy() {
+      document.getElementById('buyModal').classList.add('open');
     }
 
-    function closeCheckout() {
-      document.getElementById('checkoutModal').classList.remove('open');
+    function closeBuy() {
+      document.getElementById('buyModal').classList.remove('open');
     }
 
-    function completeOrder(e) {
+    function submitOrder(e) {
       e.preventDefault();
-      triggerChairSqueak();
-      const code = document.getElementById('promoCode').value.trim().toUpperCase();
-      const note = code === 'FAKEFRAMES'
-        ? '✓ Promo FAKEFRAMES applied! Your chair will ship with 4x hallucinated cushions.'
-        : '✓ Order confirmed! Jensen is personally pulling your chair out of the oven.';
-      document.getElementById('orderResult').textContent = note;
+      triggerSqueak();
+      const code = document.getElementById('promoInput').value.trim().toUpperCase();
+      document.getElementById('orderStatus').textContent = code === 'JACKET'
+        ? '✓ Code JACKET applied! Ships with an extra leather jacket & 4x fake squeaks.'
+        : '✓ Order confirmed! Your chair will snitch on coworkers within 3–5 business days.';
     }
   </script>
 </body>
